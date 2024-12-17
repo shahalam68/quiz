@@ -16,22 +16,22 @@ const Footer = () => {
       <Image src={footrlogo} alt="Footer Logo" width={200} height={90} />
       <h2 className="text-[#666] font-normal">Play to Win.</h2>
       <div className="flex justify-center gap-2">
-        <div className="p-[10px] bg-[#111]  rounded-sm">
+        <div className="p-[10px] bg-[#111] hover:bg-[#dc3545]  rounded-sm">
           <FaFacebookF className="text-base text-white  " />
         </div>
-        <div className="p-[10px] bg-[#111]  hover:bg:[#dc3545] rounded-sm">
+        <div className="p-[10px] bg-[#111]  hover:bg-[#dc3545] rounded-sm">
           <FaTwitter className="text-base text-white  " />
         </div>
-        <div className="p-[10px] bg-[#111] hover:bg:[#dc3545] rounded-sm">
+        <div className="p-[10px] bg-[#111] hover:bg-[#dc3545] rounded-sm">
           <FaLinkedinIn className="text-base text-white  " />
         </div>
-        <div className="p-[10px] bg-[#111] hover:bg:[#dc3545] rounded-sm">
+        <div className="p-[10px] bg-[#111] hover:bg-[#dc3545] rounded-sm">
           <FaPinterest className="text-base text-white  " />
         </div>
-        <div className="p-[10px] bg-[#111] hover:bg:[#dc3545] rounded-sm">
+        <div className="p-[10px] bg-[#111] hover:bg-[#dc3545] rounded-sm">
           <FaRss className="text-base text-white  " />
         </div>
-        <div className="p-[10px] bg-[#111] hover:bg:[#dc3545] rounded-sm">
+        <div className="p-[10px] bg-[#111] hover:bg-[#dc3545] rounded-sm">
           <FaYoutube className="text-base text-white  " />
         </div>
       </div>
