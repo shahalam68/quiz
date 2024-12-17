@@ -17,7 +17,7 @@ const Tabs = () => {
         {tabsItem.map((item, index) => (
           <div
             key={index}
-            className="text-white px-4 md:px-7 md:py-4 py-2 font-bold text-xs sm:text-sm bg-[#d32535] rounded-sm text-center"
+            className="text-white px-4  md:py-4 py-2 font-bold text-xs sm:text-sm bg-[#d32535] rounded-sm text-center"
           >
             {item}
           </div>
