@@ -1,22 +1,27 @@
 "use client";
-import React, { useState } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 import { IoIosArrowUp } from "react-icons/io";
-
-// import { Button } from "./Styles";
 
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
 
+  // Function to toggle button visibility based on scroll position
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
-      setVisible(true);
-    } else if (scrolled <= 300) {
-      setVisible(false);
-    }
+    setVisible(scrolled > 300);
   };
 
+  // Attach the scroll event listener on mount and clean it up on unmount
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+
+    return () => {
+      // Cleanup event listener
+      window.removeEventListener("scroll", toggleVisible);
+    };
+  }, []);
+
+  // Function to scroll to the top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -24,15 +29,12 @@ const ScrollButton = () => {
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
-//   console.log(visible);
-
   return (
     <button
-    className={`px-3 py-2 rounded ${visible ? "inline-block" : "hidden"} bg-[rgba(41,41,49,0.9)] hover:bg-[#dc3545]`}
+      onClick={scrollToTop}
+      className={`px-3 py-2 rounded ${visible ? "inline-block" : "hidden"} bg-[rgba(41,41,49,0.9)] hover:bg-[#dc3545]`}
     >
-    
-      <IoIosArrowUp className="text-white text-xl" onClick={scrollToTop} />
+      <IoIosArrowUp className="text-white text-xl" />
     </button>
   );
 };
